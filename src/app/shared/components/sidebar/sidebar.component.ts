@@ -8,11 +8,10 @@ import { MenuConfig, MenuItem } from '../../configs/sidebar.config';
 })
 export class SidebarComponent implements OnInit {
 
-  @Input() sidebarOpen: boolean;
-  sidebarConfig: MenuItem[];
+  open = true;
 
   constructor() {
-    this.sidebarConfig = MenuConfig;
+    // this.sidebarConfig = MenuConfig;
   }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 
 @Component({
@@ -6,22 +6,26 @@ import { SharedService } from '../../services/shared.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 
-  dropdownOpen = false
-  sidebarOpen: boolean;
+  public openSearch: boolean = false;
+  public openDropdown: boolean = false;
   constructor(
     private sharedService: SharedService
   ) { }
 
   ngOnInit(): void {
-    this.sharedService.getSidebarState().subscribe(
-      state => this.sidebarOpen = state
-    );
   }
 
-  openSidebar() {
-    this.sharedService.setSidebarState(true);
+  ngAfterViewInit(): void {
+    // document.addEventListener(
+    //   'click',
+    //   (e) => {
+    //     if (this.openDropdown) {
+    //       this.openDropdown = false;
+    //     }
+    //   }
+    // );
   }
 
 }
