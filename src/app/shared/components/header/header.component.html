@@ -1,25 +1,22 @@
 <header class=" relative w-full h-16 bg-blue-400 px-5 py-2 flex items-start justify-end">
-  <button class="absolute left-4 self-center justify-center">
-    <i class='bx bx-sm bx-menu'></i>
-  </button>
 
   <div class="relative flex self-center">
     <input type="text" placeholder="Tìm kiếm..." [disabled]="!openSearch"
       [ngClass]="openSearch ? 'w-56 placeholder-opacity-100' : 'w-10 opacity-0'"
-      class="transition-all px-3 duration-700 ease-in-out h-9 rounded-md">
+      class="transition-all pl-3 pr-10 duration-700 ease-in-out h-9 rounded-md">
     <button (click)="openSearch = !openSearch"
       class="absolute self-center right-1 rounded-md ml-1 w-8 h-8 bg-blue-300 hover:bg-blue-500 transition-all duration-700 ease-in-out flex items-center justify-center">
       <i class='bx bx-sm bx-search'></i>
     </button>
   </div>
 
-  <div (click)="openDropdown = !openDropdown" [ngClass]="openDropdown ? 'h-52 bg-blue-500 text-white' : 'h-12'"
+  <div (mouseenter)="openDropdown = true" (mouseleave)="openDropdown = false" [ngClass]="openDropdown ? 'h-52 bg-blue-500 text-white' : 'h-12'"
     class="sticky top-2 flex-col flex h-12 bg-blue-300 rounded-md ml-2.5 cursor-pointer hover:bg-blue-500 hover:text-white transition-all duration-700 ease-in-out">
     <div class="relative flex ">
       <div class="h-10 m-1 w-10 bg-blue-900 rounded-md"></div>
       <div class=" flex flex-col mx-1">
         <span class="font-semibold">What your name?</span>
-        <span class="text-sm">Developer</span>
+        <span class="text-sm flex items-center justify-between">Developer <i [ngClass]="openDropdown ? 'bx-chevron-up' : 'bx-chevron-down'" class='bx text-xl'></i></span>
       </div>
     </div>
   </div>

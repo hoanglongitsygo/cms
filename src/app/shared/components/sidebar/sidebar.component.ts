@@ -8,7 +8,7 @@ import { MenuConfig, MenuItem } from '../../configs/sidebar.config';
 })
 export class SidebarComponent implements OnInit {
 
-  open = true;
+  collapsed = false;
 
   constructor() {
     // this.sidebarConfig = MenuConfig;

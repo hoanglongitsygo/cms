@@ -1,65 +1,79 @@
-<div class="w-64 h-screen bg-blue-600 font-semibold text-white">
+<div [ngClass]="collapsed ? 'w-14' : 'w-64'"
+  class="h-screen bg-blue-600 font-semibold text-white transition-all duration-500 ease-in-out">
   <div class="h-16 flex justify-center items-center text-2xl font-semibold border-b border-dashed border-black">
-    <img class="w-12" src="assets/img/chelsea-fc-2.svg" alt="">
-    <span>TRUE BLUE</span>
+    <i [ngClass]=" collapsed ? 'absolute' : ''" class='bx bx-md bxl-ok-ru'></i>
+    <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'">DMSProject</span>
   </div>
-  <nav class="h-full px-2 py-5">
+  <nav class="px-2 py-5">
 
     <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bx-grid-alt'></i>
-        <span class="ml-2">Dashboard</span>
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bx-grid-alt'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2 vi">Dashboard</span>
       </button>
     </div>
 
     <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bx-user' ></i>
-        <span class="ml-2">Quản lý tài khoản</span>
-      </button>
-    </div>
-    
-    <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bx-pie-chart-alt-2' ></i>
-        <span class="ml-2">Phân tích - thống kê</span>
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bx-user'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2">Quản lý tài khoản</span>
       </button>
     </div>
 
     <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bx-money' ></i>
-        <span class="ml-2">Quản lý đơn hàng</span>
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bx-pie-chart-alt-2'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2">Phân tích - thống kê</span>
       </button>
     </div>
 
     <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bx-layer'></i>
-        <span class="ml-2">Quản lý sản phẩm</span>
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bx-money'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2">Quản lý đơn hàng</span>
       </button>
     </div>
 
     <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bx-home-alt' ></i>
-        <span class="ml-2">Quản lý kho</span>
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bx-layer'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2">Quản lý sản phẩm</span>
       </button>
     </div>
 
     <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bxs-discount'></i>
-        <span class="ml-2">Khuyến mại</span>
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bx-home-alt'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2">Quản lý kho</span>
       </button>
     </div>
 
     <div class="w-full rounded-xl">
-      <button class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold px-4 hover:bg-blue-300 hover:text-gray-900">
-        <i class='bx bx-chat' ></i>
-        <span class="ml-2">Chat</span>
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bxs-discount'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2">Khuyến mại</span>
+      </button>
+    </div>
+
+    <div class="w-full rounded-xl">
+      <button [ngClass]="collapsed ? 'justify-center' : 'px-4'"
+        class="w-full flex items-center h-8 mb-1 rounded-md text-left font-semibold hover:bg-blue-300 hover:text-gray-900">
+        <i [ngClass]="collapsed ? 'text-2xl absolute' : 'text-base'" class='bx bx-chat'></i>
+        <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap overflow-ellipsis ml-2">Chat</span>
       </button>
     </div>
 
   </nav>
+  <button [ngClass]="collapsed ? 'w-14' : 'w-64'" (click)="collapsed = !collapsed"
+    class="h-8 bg-blue-400 flex justify-center font-normal items-center absolute bottom-0 left-0 transition-all duration-500 ease-in-out">
+    <i [ngClass]="collapsed ? 'bx bx-chevrons-right absolute' : 'bx bx-chevrons-left'"></i>
+    <span [ngClass]=" !collapsed ? 'opacity-100 duration-700' : 'opacity-0 z--1'" class="whitespace-nowrap">Collapse Sidebar</span>
+  </button>
 </div>
